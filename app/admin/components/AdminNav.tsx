@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import type { Route } from "next";
 import { usePathname } from "next/navigation";
 
-const items = [
+const items: { href: Route; label: string }[] = [
   { label: "Products", href: "/admin/products" },
   { label: "Enquiries", href: "/admin/enquiries" },
 ];
