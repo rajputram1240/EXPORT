@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import type { Route } from "next";
+
 
 export default function Footer() {
   return (
@@ -29,8 +31,8 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold text-gray-900 text-lg mb-2">Legal & Social</h4>
           <ul className="space-y-2 mb-4">
-            <li><Link href="/terms" className="hover:text-blue-600">Terms & Conditions</Link></li>
-            <li><Link href="/privacy" className="hover:text-blue-600">Privacy Policy</Link></li>
+            <li><Link href={"/terms" as Route} className="hover:text-blue-600">Terms & Conditions</Link></li>
+            <li><Link href={"/privacy" as Route} className="hover:text-blue-600">Privacy Policy</Link></li>
           </ul>
           <div className="flex gap-3 text-gray-500">
             <Link href="https://facebook.com" target="_blank" className="hover:text-blue-600"><FaFacebookF /></Link>
