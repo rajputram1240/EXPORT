@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
+import type { Route } from "next";
 
 export default function LoginPage() {
   const [username, setUsername] = useState('');
@@ -21,7 +22,7 @@ export default function LoginPage() {
         body: JSON.stringify({ username, password })
       });
       if (!res.ok) throw new Error('Invalid username or password');
-      router.push(redirect);
+      router.push(redirect as Route);
     } catch (e: any) {
       setErr(e.message);
     } finally {
